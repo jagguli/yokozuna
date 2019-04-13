@@ -114,9 +114,8 @@ maybe_process(true, #rpbsearchqueryreq{index=Index}=Msg, State) ->
                     yz_stat:search_fail(),
                     ?INFO("~p ~p ~p~n", [Message, URL, Err]),
                     {error, Message, State};
-                _:Reason ->
+                _:Reason:Trace ->
                     yz_stat:search_fail(),
-                    Trace = erlang:get_stacktrace(),
                     ?ERROR("~p ~p~n", [Reason, Trace]),
                     {error, ?YZ_ERR_QUERY_FAILURE, State}
             end;

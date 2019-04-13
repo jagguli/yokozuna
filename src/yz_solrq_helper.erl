@@ -300,8 +300,7 @@ send_solr_ops_for_entries(Index, Ops, Entries) ->
             ?DEBUG("batch for index ~s failed.  Error: ~p~n", [Index, Err]),
             ?ERROR("Updating a batch of Solr operations failed for index ~p with error ~p", [Index, Err]),
             yz_fuse:melt(Index),
-            Trace = erlang:get_stacktrace(),
-            {error, {Err, Trace}}
+            {error, {Err, []}}
     end.
 
 handle_bad_entries(Index, Ops, Entries) ->
