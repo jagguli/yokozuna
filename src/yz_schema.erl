@@ -21,7 +21,7 @@
 
 -module(yz_schema).
 -include("yokozuna.hrl").
--compile(export_all).
+-compile([export_all, nowarn_export_all]).
 
 -define(SCHEMA_VSN_OLD, "1.5").
 -define(SCHEMA_VSN,     "1.6").
