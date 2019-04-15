@@ -24,7 +24,7 @@ BUILD_DIR=../build
 VSN=solr-7.3.1
 
 FILENAME=$VSN.tgz
-TMP_DIR="$(pwd)/tmp"
+TMP_DIR="/tmp/solr/"
 TMP_FILE=$TMP_DIR/$FILENAME
 SRC_DIR=$BUILD_DIR/$VSN
 
