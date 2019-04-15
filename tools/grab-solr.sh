@@ -56,7 +56,7 @@ get_solr()
             echo "Using cached copy of Solr at $TMP_FILE"
             ln -s $TMP_FILE $FILENAME
         else
-            echo "Downloading original Solr..."
+            echo "Downloading original Solr... to $(TMP_DIR)"
             download "${ARTIFACT_URL_PREFIX}/$FILENAME"
             download "${ARTIFACT_URL_PREFIX}/$FILENAME.sha1"
             set -u; shasum -s -c $FILENAME.sha1
